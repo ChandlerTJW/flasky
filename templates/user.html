@@ -1,0 +1,12 @@
+<!--继承base.html模板-->
+{% extends "base.html" %}
+
+<!--替代base模板的title-->
+{% block title %}Flasky{% endblock %}
+
+<!--替代base模板的page_content-->
+{% block page_content %}
+<div class="page-header">
+    <h2>欢迎你，{{ name }}!</h2>
+</div>
+{% endblock %}

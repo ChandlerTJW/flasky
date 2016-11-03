@@ -1,0 +1,12 @@
+<!--继承base.html模板-->
+{% extends "base.html" %}
+
+<!--替代base模板中的title-->
+{% block title %}Flasky - Page Not Found{% endblock %}
+
+<!--替代base模板中的page_content-->
+{% block page_content %}
+<div class="page-header">
+    <h1>Not Found</h1>
+</div>
+{% endblock %}

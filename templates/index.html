@@ -1,0 +1,18 @@
+<!--继承base.html模板-->
+{% extends "base.html" %}
+<!--使用Flask_WTF和Flask_Bootstrap渲染表单-->
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!--替代base模板的title-->
+{% block title %}Flasky{% endblock %}
+
+<!--替代base模板的page_content-->
+{% block page_content %}
+<div class="page-header">
+    <h2>欢迎你，{% if name %}{{ name }}{% else %}朋友!{% endif %}!</h2>
+</div>
+{{ wtf.quick_form(form) }}
+<!--使用flask-moment渲染时间戳-->
+<p>当地时间：{{ moment(current_time).format('LLL')}}</p>
+<p>{{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}
